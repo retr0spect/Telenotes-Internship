@@ -56,14 +56,19 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String enteredText = searchEditText.getText().toString().trim();
                 searchEditText.setText("");
-                if (!Objects.equals(enteredText, "")) {
-                    Query query = new Query()
-                            .field("locality").isEqual(enteredText);
-                    FactualRetrievalTask task = new FactualRetrievalTask();
-                    task.execute(query);
+                if (Utilities.isInternetAvailable(getApplicationContext())) {
+                    if (!Objects.equals(enteredText, "")) {
+                        Query query = new Query()
+                                .field("locality").isEqual(enteredText);
+                        FactualRetrievalTask task = new FactualRetrievalTask();
+                        task.execute(query);
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Enter Some City!", Toast.LENGTH_SHORT).show();
+                    }
                 } else {
-                    Toast.makeText(getApplicationContext(), "Enter Some City!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Internet Not Available!", Toast.LENGTH_SHORT).show();
                 }
+
             }
         });
 
