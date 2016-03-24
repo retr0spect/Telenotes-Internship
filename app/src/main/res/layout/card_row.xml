@@ -18,16 +18,14 @@
             android:gravity="center_vertical"
             android:text=" Restaurant Name"
             android:textColor="@android:color/white"
-            android:textSize="14dp" />
-
-
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/txtRating"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Rating"
-            android:textSize="10dp"
+            android:textSize="12sp"
             android:layout_above="@+id/addressLabel"
             android:layout_toEndOf="@+id/addressLabel"
             android:layout_marginStart="19dp" />
@@ -37,7 +35,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Address"
-            android:textSize="10dp"
+            android:textSize="12sp"
             android:layout_above="@+id/categoryLabel"
             android:layout_alignStart="@+id/txtRating" />
 
@@ -45,8 +43,8 @@
             android:id="@+id/txtType"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Category"
-            android:textSize="10dp"
+            android:text="Type"
+            android:textSize="12sp"
             android:layout_alignBottom="@+id/categoryLabel"
             android:layout_alignStart="@+id/txtAddress" />
 
@@ -75,12 +73,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Category:"
-            android:layout_marginBottom="2sp"
+            android:text="Type:"
             android:id="@+id/categoryLabel"
             android:textSize="12sp"
             android:layout_below="@+id/addressLabel"
-            android:layout_toStartOf="@+id/txtRating" />
+            android:layout_alignStart="@+id/addressLabel"
+            android:layout_marginBottom="4sp" />
 
     </RelativeLayout>
 

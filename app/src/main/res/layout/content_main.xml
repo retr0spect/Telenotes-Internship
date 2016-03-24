@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingLeft="8sp"
+    android:paddingRight="8sp"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.intern.aditya.telenotes.MainActivity"
@@ -34,18 +34,6 @@
             android:text="Search"/>
 
     </LinearLayout>
-
-
-
-
-    <!--<ListView-->
-    <!--android:id="@+id/list_view"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="match_parent"-->
-    <!--android:layout_centerHorizontal="true"-->
-    <!--android:layout_below="@+id/editText">-->
-
-    <!--</ListView>-->
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/cardList"

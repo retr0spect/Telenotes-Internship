@@ -20,6 +20,9 @@ import com.factual.driver.Query;
 import com.factual.driver.ReadResponse;
 import com.google.common.collect.Lists;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -104,7 +107,24 @@ public class MainActivity extends AppCompatActivity {
                 for (Map<String, Object> restaurant : response.getData()) {
                     String name = (String) restaurant.get("name");
                     String address = (String) restaurant.get("address");
-                    String type = (String) restaurant.get("tel");
+
+                    StringBuilder sb = new StringBuilder();
+                    JSONArray jsonarray = (JSONArray) restaurant.get("category_labels");
+                    for (int i = 0; i < jsonarray.length(); i++) {
+                        try {
+                            JSONArray nestedJsonArray = jsonarray.getJSONArray(i);
+                            String typex = String.valueOf(nestedJsonArray.get(nestedJsonArray.length() - 1));
+                            if (i < jsonarray.length() - 1) {
+                                sb.append(typex).append(", ");
+                            } else {
+                                sb.append(typex);
+                            }
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    String type = sb.toString();
                     String rating = String.valueOf(restaurant.get("rating"));
                     restaurants.add(new Restaurant(name, address, type, rating));
                 }
