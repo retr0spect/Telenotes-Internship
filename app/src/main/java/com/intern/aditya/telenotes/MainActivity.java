@@ -58,7 +58,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String enteredText = searchEditText.getText().toString().trim();
-                searchEditText.setText("");
                 if (Utilities.isInternetAvailable(getApplicationContext())) {
                     if (!Objects.equals(enteredText, "")) {
                         Query query = new Query()
